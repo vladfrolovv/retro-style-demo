@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foam &amp; Slip — Vlad Frolov test task</title>
+  <meta name="description" content="Foam &amp; Slip: a small first-person Unity game. Put out the fires, save the plant, mind your step.">
+  <meta name="theme-color" content="#F5E5D3">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/img/about-rookie-sign.webp" as="image">
+  <link rel="preload" href="assets/img/about-chief-plant.webp" as="image">
+  <link rel="stylesheet" href="css/site.css">
+  <script src="config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header">
+    <a class="logo" href="#about">FOAM &amp; SLIP</a>
+    <div class="header-right">
+      <nav class="tabs" aria-label="Sections" data-i18n-aria="navLabel">
+        <a class="tab" href="#about" data-tab="about" aria-current="page" data-i18n="tabAbout">About</a>
+        <a class="tab" href="#watch" data-tab="watch" data-i18n="tabWatch">Watch</a>
+        <a class="tab" href="#play" data-tab="play" data-i18n="tabPlay">Play</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="langLabel">
+        <button type="button" class="lang-btn" data-lang="uk" aria-pressed="false" lang="uk">UA</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="panel panel-about" id="panel-about" data-panel="about" aria-labelledby="about-title">
+      <div class="hero">
+        <div class="hero-copy">
+          <h1 id="about-title" class="hero-title" tabindex="-1" data-i18n="heroTitle">The floor is the problem.</h1>
+          <p class="hero-lead" data-i18n-html="heroLead">Put out the fires. Save the plant.<br> Mind your step.</p>
+          <div class="actions">
+            <a class="btn" href="#watch" data-i18n="actionWatch">Watch gameplay</a>
+            <a class="btn" href="#play" data-i18n="actionPlay">Play demo</a>
+          </div>
+          <p class="tools"><span class="tool">Claude + Codex</span> <span class="dot" aria-hidden="true">·</span> <span class="tool">Blender</span> <span class="dot" aria-hidden="true">·</span> <span class="tool">Unity / Zenject</span> <span class="dot" aria-hidden="true">·</span> <span class="tool">UI Toolkit</span></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="artboard">
+            <span class="shadow shadow-rookie-boot"></span>
+            <span class="shadow shadow-sign"></span>
+            <span class="shadow shadow-chief"></span>
+            <img class="art art-foam" src="assets/img/foam-cluster.webp" alt="" width="820" height="204">
+            <img class="art art-rookie" src="assets/img/about-rookie-sign.webp" alt="" width="989" height="1107">
+            <img class="art art-chief" src="assets/img/about-chief-plant.webp" alt="" width="766" height="1456">
+          </div>
+        </div>
+      </div>
+
+      <section class="idea" aria-labelledby="idea-title">
+        <div class="idea-copy">
+          <p class="eyebrow" data-i18n="ideaEyebrow">The idea</p>
+          <h2 id="idea-title" data-i18n="ideaTitle">The foam that saves you also knocks you down.</h2>
+          <p class="idea-lead" data-i18n="ideaLead">A one-room first-person game. You carry a heavy foam gun and put out the fires. But every spray makes the floor slippery: for you, the furniture and your partner.</p>
+        </div>
+        <img class="idea-art" src="assets/img/idea-concept.webp" alt="First concept: a firefighter slipping on foam in a burning living room" data-i18n-alt="ideaArtAlt" width="1600" height="900" loading="lazy">
+        <ul class="idea-cards">
+          <li class="idea-card card-red">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="12" rx="6" fill="currentColor"/><rect x="30" y="23" width="12" height="6" rx="3" fill="currentColor"/><rect x="12" y="30" width="8" height="12" rx="3" fill="currentColor"/><circle cx="44" cy="17" r="3" fill="currentColor" opacity=".55"/><circle cx="40" cy="11" r="2.2" fill="currentColor" opacity=".4"/></svg>
+            </span>
+            <h3 data-i18n="ideaGunTitle">Heavy foam gun</h3>
+            <p data-i18n="ideaGunText">Two hands, a kick when the pressure builds, and a tank you have to refill.</p>
+          </li>
+          <li class="idea-card card-teal">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 36c6-4 12-4 18 0s12 4 18 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="16" cy="22" r="6" fill="currentColor"/><circle cx="28" cy="18" r="8" fill="currentColor"/><circle cx="38" cy="25" r="5" fill="currentColor"/></svg>
+            </span>
+            <h3 data-i18n="ideaSlipTitle">Foam is slippery</h3>
+            <p data-i18n="ideaSlipText">Foam on the floor kills your grip. Brake late and you slide. Your partner slips too, and blames you.</p>
+          </li>
+          <li class="idea-card card-orange">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 4c3 8 12 12 12 24a12 12 0 0 1-24 0c0-6 3-9 5-12 1 4 3 6 5 6-1-7 0-12 2-18z" fill="currentColor"/></svg>
+            </span>
+            <h3 data-i18n="ideaFireTitle">Fire that spreads</h3>
+            <p data-i18n="ideaFireText">Heat jumps to anything that burns. Foam cools a fire and keeps it out for a while.</p>
+          </li>
+          <li class="idea-card card-yellow">
+            <span class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M16 30h16l-3 14H19z" fill="currentColor"/><circle cx="24" cy="15" r="5" fill="currentColor"/><circle cx="24" cy="6" r="4" fill="currentColor" opacity=".7"/><circle cx="32" cy="12" r="4" fill="currentColor" opacity=".7"/><circle cx="16" cy="12" r="4" fill="currentColor" opacity=".7"/><circle cx="30" cy="21" r="4" fill="currentColor" opacity=".7"/><circle cx="18" cy="21" r="4" fill="currentColor" opacity=".7"/><path d="M24 20v10" stroke="currentColor" stroke-width="3"/></svg>
+            </span>
+            <h3 data-i18n="ideaPlantTitle">Save the plant</h3>
+            <p data-i18n="ideaPlantText">Put out every fire, then carry the flower pot out of the room.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="built" aria-labelledby="built-title">
+        <h2 id="built-title" data-i18n="builtTitle">How I built it</h2>
+        <ul class="built-list">
+          <li><strong>Claude + Codex</strong> <span data-i18n="builtAi">AI agents for the code, the Blender scripts and the art.</span></li>
+          <li><strong>Blender</strong> <span data-i18n="builtBlender">vibe modeling: models, rigs and animation.</span></li>
+          <li><strong>Unity / URP + Zenject</strong> <span data-i18n="builtUnity">gameplay, physics and light; MVC with dependency injection.</span></li>
+          <li><strong>UI Toolkit</strong> <span data-i18n="builtUi">the HUD, the menus and the rest of the UI.</span></li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="panel panel-media" id="panel-watch" data-panel="watch" aria-labelledby="watch-title" hidden>
+      <h1 id="watch-title" class="media-title" tabindex="-1" data-i18n="watchTitle">Watch the mess.</h1>
+      <div class="stage-wrap">
+        <div class="stage stage-watch">
+          <img class="char char-body watch-rookie" src="assets/img/watch-rookie-corner.webp" alt="" width="1312" height="1199" loading="lazy" aria-hidden="true">
+          <img class="char char-body watch-chief" src="assets/img/watch-chief-corner.webp" alt="" width="1155" height="1362" loading="lazy" aria-hidden="true">
+          <div class="frame">
+            <div class="viewport video-viewport" id="video-stage" data-playing="false">
+              <video id="gameplay-video" class="video" playsinline preload="none" aria-label="Foam &amp; Slip gameplay recording" data-i18n-aria="videoLabel"></video>
+              <button type="button" class="vid-big" id="vid-big" aria-label="Play" data-i18n-aria="vidPlay">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5v13l10-6.5z" fill="currentColor"/></svg>
+              </button>
+              <div class="vid-bar">
+                <button type="button" class="vid-btn" id="vid-toggle" aria-label="Play" data-i18n-aria="vidPlay">
+                  <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z" fill="currentColor"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>
+                </button>
+                <span class="vid-time" id="vid-time">0:00 / 0:00</span>
+                <input class="vid-seek" id="vid-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek" data-i18n-aria="vidSeek">
+                <button type="button" class="vid-btn" id="vid-full" aria-label="Fullscreen" data-i18n-aria="fullscreen">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
+              <div class="viewport-message" id="video-error" hidden>
+                <p data-i18n="videoError">The gameplay video could not be loaded.</p>
+                <button class="btn btn-small" type="button" id="video-retry" data-i18n="retry">Try again</button>
+              </div>
+            </div>
+          </div>
+          <img class="art stage-foam stage-foam-left" src="assets/img/foam-cluster.webp" alt="" width="820" height="204" loading="lazy" aria-hidden="true">
+          <img class="art stage-foam stage-foam-right" src="assets/img/foam-cluster.webp" alt="" width="820" height="204" loading="lazy" aria-hidden="true">
+        </div>
+      </div>
+    </section>
+
+    <section class="panel panel-media" id="panel-play" data-panel="play" aria-labelledby="play-title" hidden>
+      <h1 id="play-title" class="media-title" tabindex="-1" data-i18n="playTitle">Your turn.</h1>
+      <div class="stage-wrap">
+        <div class="stage stage-play">
+          <img class="char char-body play-rookie" src="assets/img/play-rookie-corner.webp" alt="" width="1536" height="1024" loading="lazy" aria-hidden="true">
+          <img class="char char-body play-chief" src="assets/img/play-chief-corner.webp" alt="" width="1178" height="1335" loading="lazy" aria-hidden="true">
+          <div class="frame">
+            <div class="viewport game-viewport" id="game-stage" data-state="idle">
+              <div class="game-canvas-host" id="game-canvas-host"></div>
+              <img class="game-poster" src="assets/img/gameplay-poster.webp" alt="" width="1920" height="1080" loading="lazy">
+              <div class="game-overlay" id="game-overlay">
+                <div class="game-panel game-panel-start" data-for="idle stopped">
+                  <p class="game-status game-note-above" id="game-stopped-text" hidden data-i18n="gameStopped">The game stopped when you left this tab.</p>
+                  <button class="btn btn-start" type="button" id="game-start">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+                    <span data-i18n="startGame">Start game</span>
+                  </button>
+                  <p class="game-hint game-note-below" id="game-touch-hint" hidden data-i18n-html="touchHint">This game needs a keyboard and a mouse. <a href="#watch">Watch the video</a> instead.</p>
+                </div>
+                <div class="game-panel" data-for="loading">
+                  <p class="game-status" id="game-progress-text">Loading the game…</p>
+                  <div class="progress" role="progressbar" aria-labelledby="game-progress-text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="game-progress">
+                    <span class="progress-bar" id="game-progress-bar"></span>
+                  </div>
+                </div>
+                <div class="game-panel" data-for="error">
+                  <p class="game-status" data-i18n="gameError">The game could not start.</p>
+                  <p class="game-hint" id="game-error-text"></p>
+                  <button class="btn btn-small" type="button" id="game-retry" data-i18n="retry">Try again</button>
+                </div>
+                <div class="game-panel" data-for="unavailable">
+                  <p class="game-status" data-i18n="gameUnavailable">The browser build is not connected yet.</p>
+                  <p class="game-hint" data-i18n="gameUnavailableHint">Watch the gameplay video in the meantime.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="art stage-foam stage-foam-left" src="assets/img/foam-cluster.webp" alt="" width="820" height="204" loading="lazy" aria-hidden="true">
+          <img class="art stage-foam stage-foam-right" src="assets/img/foam-cluster.webp" alt="" width="820" height="204" loading="lazy" aria-hidden="true">
+        </div>
+      </div>
+      <div class="controls-row">
+        <ul class="controls" aria-label="Controls" data-i18n-aria="controlsLabel">
+          <li><kbd>WASD</kbd> <span data-i18n="ctrlMove">Move</span></li>
+          <li><span class="mouse-icon" aria-hidden="true"></span> <span data-i18n="ctrlLook">Mouse Look</span></li>
+          <li><kbd data-i18n="keyLmb">LMB</kbd> <span data-i18n="ctrlFoam">Foam</span></li>
+          <li><kbd>E</kbd> <span data-i18n="ctrlInteract">Interact</span></li>
+          <li><kbd>R</kbd> <span data-i18n="ctrlRestart">Restart</span></li>
+          <li><kbd>Esc</kbd> <span data-i18n="ctrlPause">Pause</span></li>
+        </ul>
+        <button class="btn btn-small btn-fullscreen" type="button" id="game-fullscreen">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="fullscreen">Fullscreen</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="btn btn-small btn-linkedin" href="https://www.linkedin.com/in/vl-frolov/" target="_blank" rel="noopener noreferrer">
+      <span class="in-badge" aria-hidden="true">in</span>
+      <span data-i18n="linkedin">LinkedIn</span>
+    </a>
+    <p class="footer-name" data-i18n="authorName">Vlad Frolov</p>
+  </footer>
+</body>
+</html>
