@@ -34,10 +34,34 @@ else
   ffmpeg -v error -y -i "$VIDEO" -c copy -movflags +faststart "$SITE/media/gameplay.mp4"
 fi
 
-if [ -f "$BUILD/Build/FoamDemoWebGL.loader.js" ]; then
-  rm -rf "$SITE/game/Build" "$SITE/game/StreamingAssets"
-  cp -R "$BUILD/Build" "$SITE/game/Build"
+if [ -f "$BUILD/index.html" ] && ls "$BUILD"/Build/*.loader.js >/dev/null 2>&1; then
+  mkdir -p "$SITE/game/Build"
+  cp "$BUILD"/Build/* "$SITE/game/Build/"
+  rm -rf "$SITE/game/StreamingAssets"
   cp -R "$BUILD/StreamingAssets" "$SITE/game/StreamingAssets"
+  python3 - "$BUILD/index.html" "$SITE/config.js" "$SITE/game/Build" <<'PY'
+import os, re, sys
+index, config, folder = sys.argv[1:4]
+html = open(index).read()
+names = {}
+for key in ("loaderUrl", "dataUrl", "frameworkUrl", "codeUrl"):
+    match = re.search(key + r'\s*[=:]\s*buildUrl \+ "/([^"]+)"', html)
+    if not match:
+        sys.exit(f"sync-assets: {key} not found in {index}")
+    names[key] = match.group(1)
+text = open(config).read()
+previous = set(re.findall(r'game/Build/([^"]+)"', text))
+for key, name in names.items():
+    text, count = re.subn(key + r': "game/Build/[^"]+"', f'{key}: "game/Build/{name}"', text)
+    if count != 1:
+        sys.exit(f"sync-assets: {key} not found in {config}")
+open(config, "w").write(text)
+keep = previous | set(names.values())
+for name in os.listdir(folder):
+    if name not in keep:
+        os.remove(os.path.join(folder, name))
+print("sync-assets: game files", ", ".join(sorted(names.values())), "| kept from the previous build:", ", ".join(sorted(previous - set(names.values()))) or "none")
+PY
 else
   echo "No WebGL build at $BUILD; the Play tab will show its unavailable state" >&2
 fi

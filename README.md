@@ -13,7 +13,7 @@ The site is plain HTML, CSS and JavaScript, in English and Ukrainian. There is n
 | Path | What it is |
 | --- | --- |
 | `site/index.html` | The page. All text is real HTML. |
-| `site/config.js` | Paths to the video, the poster and the Unity build files. Change this file to connect a new build. |
+| `site/config.js` | Paths to the video, the poster and the Unity build files. `scripts/sync-assets.sh` rewrites the four build file names. |
 | `site/js/app.js` | Tabs, lazy video, and the Unity start/stop logic. |
 | `site/js/i18n.js` | All page text in English and Ukrainian, and the UA / EN switch. `?lang=uk` or `?lang=en` in a link picks the language. |
 | `site/css/site.css` | Styles. Colours come from the approved ivory concept. |
@@ -37,7 +37,7 @@ It converts the art and the idea concept to WebP, copies the video with `faststa
 
 The WebGL build comes from `FoamDemoBuilder.BuildWebGLPlayer` in the game repository. It uses **Gzip compression with the decompression fallback**. GitHub Pages cannot send the `Content-Encoding` header for `.unityweb` files, so the Unity loader unpacks them in the browser. This is slower to start than native compression, but it works on any static host.
 
-If the build file names change, update `site/config.js`.
+The build file names are content hashes (for example `e0151168….loader.js`), so a browser can never mix files from two builds. `scripts/sync-assets.sh` reads the new names from the build's `index.html`, writes them into `site/config.js`, and keeps the files of the build before it, so a page that still has the old `config.js` cached loads the old build in full instead of failing.
 
 ## Preview locally
 
